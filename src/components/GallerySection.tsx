@@ -9,14 +9,32 @@ import g5 from "@/assets/gallery-5.jpeg";
 import g6 from "@/assets/gallery-6.jpeg";
 import g7 from "@/assets/gallery-7.jpeg";
 import g8 from "@/assets/gallery-8.jpeg";
+import food1 from "@/assets/food-1.jpeg";
+import food2 from "@/assets/food-2.jpeg";
+import food3 from "@/assets/food-3.jpeg";
+import food4 from "@/assets/food-4.jpeg";
+import nature1 from "@/assets/nature-1.jpeg";
+import roomBed1 from "@/assets/room-bed-1.jpeg";
+import roomBed2 from "@/assets/room-bed-2.jpeg";
+import roomBed3 from "@/assets/room-bed-3.jpeg";
+import roomInterior1 from "@/assets/room-interior-1.jpeg";
 
 const images = [
   { src: g1, alt: "बैठक व्यवस्था" },
+  { src: food3, alt: "कोकणी जेवण" },
   { src: g4, alt: "प्रवेशद्वार" },
+  { src: roomBed1, alt: "बेडरूम" },
   { src: g5, alt: "बाग" },
+  { src: food1, alt: "पारंपरिक स्वयंपाक" },
+  { src: nature1, alt: "निसर्ग" },
   { src: g6, alt: "सजावट" },
+  { src: food2, alt: "भाकरी थाळी" },
+  { src: roomBed2, alt: "फॅमिली रूम" },
   { src: g7, alt: "बाहेरील दृश्य" },
+  { src: food4, alt: "उपवास थाळी" },
+  { src: roomInterior1, alt: "खोलीचे दृश्य" },
   { src: g8, alt: "आतील दृश्य" },
+  { src: roomBed3, alt: "ग्रुप रूम" },
   { src: g2, alt: "हॉल" },
   { src: g3, alt: "परिसर" },
 ];
@@ -46,9 +64,9 @@ const GallerySection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
+              transition={{ delay: i * 0.05 }}
               className={`relative overflow-hidden rounded-xl cursor-pointer group ${
-                i === 0 || i === 5 ? "md:col-span-2 md:row-span-2" : ""
+                i === 0 || i === 6 || i === 12 ? "md:col-span-2 md:row-span-2" : ""
               }`}
               onClick={() => setSelected(i)}
             >

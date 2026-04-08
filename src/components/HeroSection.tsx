@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -38,18 +38,18 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-lg font-semibold text-accent-foreground transition-all hover:scale-105 hover:shadow-xl"
           >
             आत्ताच बुक करा
-          </a>
-          <a
-            href="#rooms"
+          </Link>
+          <Link
+            to="/rooms"
             className="inline-flex items-center justify-center rounded-full border-2 border-primary-foreground/50 px-8 py-4 text-lg font-semibold text-primary-foreground transition-all hover:bg-primary-foreground/10 hover:scale-105"
           >
             खोल्या पहा
-          </a>
+          </Link>
         </motion.div>
       </div>
 
@@ -67,18 +67,6 @@ const HeroSection = () => {
           <div className="w-1.5 h-3 rounded-full bg-primary-foreground/70" />
         </motion.div>
       </motion.div>
-
-      {/* WhatsApp floating button */}
-      <a
-        href="https://wa.me/919876543210?text=नमस्कार! मला आम्रपाली होमस्टे बद्दल माहिती हवी आहे."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold shadow-2xl transition-transform hover:scale-110 animate-float"
-        style={{ color: "#fff" }}
-      >
-        <MessageCircle className="h-5 w-5" />
-        WhatsApp
-      </a>
     </section>
   );
 };
