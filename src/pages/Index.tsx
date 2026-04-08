@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import LocationSection from "@/components/LocationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <LocationSection />
       <ContactSection />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 };

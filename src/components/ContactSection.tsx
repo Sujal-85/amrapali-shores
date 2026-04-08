@@ -7,8 +7,8 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `नमस्कार! माझे नाव ${form.name}. मला बुकिंग करायचे आहे.\nचेक-इन: ${form.checkin}\nचेक-आउट: ${form.checkout}\n${form.message}`;
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(msg)}`, "_blank");
+    const msg = `नमस्कार! माझे नाव ${form.name}. मला बुकिंग करायचे आहे.\nफोन: ${form.phone}\nचेक-इन: ${form.checkin}\nचेक-आउट: ${form.checkout}\n${form.message}`;
+    window.open(`https://wa.me/918378034720?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -37,7 +37,19 @@ const ContactSection = () => {
                 <h3 className="font-heading text-2xl font-bold text-foreground mb-6">थेट संपर्क</h3>
                 <div className="space-y-4">
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+918378034720"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Phone className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">फोन / WhatsApp</p>
+                      <p className="font-bold text-foreground">+91 83780 34720</p>
+                    </div>
+                  </a>
+                  <a
+                    href="tel:+919561142078"
                     className="flex items-center gap-4 p-4 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors"
                   >
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -45,11 +57,11 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">फोन</p>
-                      <p className="font-bold text-foreground">+91 98765 43210</p>
+                      <p className="font-bold text-foreground">+91 95611 42078</p>
                     </div>
                   </a>
                   <a
-                    href="https://wa.me/919876543210"
+                    href="https://wa.me/918378034720"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-xl bg-[#25D366]/5 hover:bg-[#25D366]/10 transition-colors"
@@ -59,7 +71,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">WhatsApp</p>
-                      <p className="font-bold text-foreground">+91 98765 43210</p>
+                      <p className="font-bold text-foreground">+91 83780 34720</p>
                     </div>
                   </a>
                 </div>

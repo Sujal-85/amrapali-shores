@@ -1,39 +1,33 @@
 import { motion } from "framer-motion";
-import { Users, Wifi, Wind, Bath } from "lucide-react";
-import gallery1 from "@/assets/gallery-1.jpeg";
-import gallery2 from "@/assets/gallery-2.jpeg";
-import gallery8 from "@/assets/gallery-8.jpeg";
+import { Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import roomBed1 from "@/assets/room-bed-1.jpeg";
+import roomBed2 from "@/assets/room-bed-2.jpeg";
+import roomBed3 from "@/assets/room-bed-3.jpeg";
 
 const rooms = [
   {
-    image: gallery8,
+    image: roomBed1,
     title: "डिलक्स फॅमिली रूम",
     price: "₹१,५००",
     capacity: "४ जण",
     features: ["एसी", "अटॅच्ड बाथरूम", "बाल्कनी"],
   },
   {
-    image: gallery1,
+    image: roomBed2,
     title: "स्टँडर्ड रूम",
     price: "₹१,०००",
     capacity: "२ जण",
     features: ["पंखा", "अटॅच्ड बाथरूम", "गार्डन व्ह्यू"],
   },
   {
-    image: gallery2,
+    image: roomBed3,
     title: "ग्रुप डॉर्मिटरी",
     price: "₹५००",
     capacity: "८ जण",
     features: ["पंखा", "कॉमन बाथरूम", "मोठा हॉल"],
   },
 ];
-
-const iconMap: Record<string, typeof Wifi> = {
-  "एसी": Wind,
-  "पंखा": Wind,
-  "अटॅच्ड बाथरूम": Bath,
-  "कॉमन बाथरूम": Bath,
-};
 
 const RoomsSection = () => {
   return (
@@ -85,12 +79,12 @@ const RoomsSection = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   className="block text-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg"
                 >
                   बुकिंग चौकशी
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

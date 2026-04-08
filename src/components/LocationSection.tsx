@@ -49,7 +49,7 @@ const LocationSection = () => {
               </div>
 
               <a
-                href="https://maps.google.com/?q=Dapoli+Maharashtra"
+                href="https://maps.app.goo.gl/7GgEWEBnWkt3xUcdA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
