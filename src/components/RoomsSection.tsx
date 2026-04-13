@@ -3,6 +3,7 @@ import { Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import roomBed3 from "@/assets/room-bed-3.jpeg";
 import roomBed2 from "@/assets/room-bed-2.jpeg";
+import roomAc from "@/assets/room-ac.jpeg";
 import roomNonac from "@/assets/room-nonac.jpeg";
 import roomJointCottage from "@/assets/room-joint-cottage.jpeg";
 
@@ -20,6 +21,13 @@ const rooms = [
     price: "₹२,५००",
     capacity: "२ जण",
     features: ["एसी", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
+  },
+  {
+    image: roomAc,
+    title: "एसी रूम",
+    price: "₹२,०००",
+    capacity: "२ जण",
+    features: ["एसी", "अटॅच्ड बाथरूम"],
   },
   {
     image: roomNonac,
@@ -53,7 +61,7 @@ const RoomsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
           {rooms.map((room, i) => (
             <motion.div
               key={room.title}
