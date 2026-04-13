@@ -3,6 +3,7 @@ import { Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import roomBed3 from "@/assets/room-bed-3.jpeg";
 import roomBed2 from "@/assets/room-bed-2.jpeg";
+import roomAc from "@/assets/room-ac.jpeg";
 import roomNonac from "@/assets/room-nonac.jpeg";
 import roomJointCottage from "@/assets/room-joint-cottage.jpeg";
 
