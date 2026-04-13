@@ -9,16 +9,23 @@ const rooms = [
   {
     image: roomBed1,
     title: "डिलक्स फॅमिली रूम",
-    price: "₹१,५००",
+    price: "₹९,५००",
     capacity: "४ जण",
     features: ["एसी", "अटॅच्ड बाथरूम", "बाल्कनी"],
   },
   {
     image: roomBed2,
-    title: "स्टँडर्ड रूम",
-    price: "₹१,०००",
+    title: "फॅमिली कॉटेज",
+    price: "₹३,५००",
+    capacity: "५ जण",
+    features: ["पंखा", "अटॅच्ड बाथरूम", "कॉटेज"],
+  },
+  {
+    image: roomBed1,
+    title: "कपल कॉटेज",
+    price: "₹२,५००",
     capacity: "२ जण",
-    features: ["पंखा", "अटॅच्ड बाथरूम", "गार्डन व्ह्यू"],
+    features: ["पंखा", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
   },
   {
     image: roomBed3,
@@ -45,7 +52,7 @@ const RoomsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {rooms.map((room, i) => (
             <motion.div
               key={room.title}
