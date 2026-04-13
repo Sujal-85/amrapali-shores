@@ -35,8 +35,10 @@ const images = [
   { src: g7, alt: "बाहेरील दृश्य" },
   { src: food4, alt: "उपवास थाळी" },
   { src: roomInterior1, alt: "खोलीचे दृश्य" },
+  { src: roomNonac, alt: "नॉन एसी रूम" },
   { src: g8, alt: "आतील दृश्य" },
   { src: roomBed3, alt: "ग्रुप रूम" },
+  { src: roomJointCottage, alt: "जॉइंट कॉटेज" },
   { src: g2, alt: "हॉल" },
   { src: g3, alt: "परिसर" },
 ];
