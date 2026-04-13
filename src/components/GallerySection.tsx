@@ -18,6 +18,8 @@ import roomBed1 from "@/assets/room-bed-1.jpeg";
 import roomBed2 from "@/assets/room-bed-2.jpeg";
 import roomBed3 from "@/assets/room-bed-3.jpeg";
 import roomInterior1 from "@/assets/room-interior-1.jpeg";
+import roomNonac from "@/assets/room-nonac.jpeg";
+import roomJointCottage from "@/assets/room-joint-cottage.jpeg";
 
 const images = [
   { src: g1, alt: "बैठक व्यवस्था" },
