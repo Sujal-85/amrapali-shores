@@ -18,6 +18,8 @@ import roomBed1 from "@/assets/room-bed-1.jpeg";
 import roomBed2 from "@/assets/room-bed-2.jpeg";
 import roomBed3 from "@/assets/room-bed-3.jpeg";
 import roomInterior1 from "@/assets/room-interior-1.jpeg";
+import roomNonac from "@/assets/room-nonac.jpeg";
+import roomJointCottage from "@/assets/room-joint-cottage.jpeg";
 
 const images = [
   { src: g1, alt: "बैठक व्यवस्था" },
@@ -33,8 +35,10 @@ const images = [
   { src: g7, alt: "बाहेरील दृश्य" },
   { src: food4, alt: "उपवास थाळी" },
   { src: roomInterior1, alt: "खोलीचे दृश्य" },
+  { src: roomNonac, alt: "नॉन एसी रूम" },
   { src: g8, alt: "आतील दृश्य" },
   { src: roomBed3, alt: "ग्रुप रूम" },
+  { src: roomJointCottage, alt: "जॉइंट कॉटेज" },
   { src: g2, alt: "हॉल" },
   { src: g3, alt: "परिसर" },
 ];
