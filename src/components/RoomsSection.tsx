@@ -23,6 +23,13 @@ const rooms = [
     features: ["एसी", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
   },
   {
+    image: roomAc,
+    title: "एसी रूम",
+    price: "₹२,०००",
+    capacity: "२ जण",
+    features: ["एसी", "अटॅच्ड बाथरूम"],
+  },
+  {
     image: roomNonac,
     title: "नॉन एसी रूम",
     price: "₹१,५००",
