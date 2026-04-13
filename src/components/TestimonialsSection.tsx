@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="section-padding bg-background">
-      <div className="container mx-auto max-w-3xl">
+      <div className="container mx-auto max-w-3xl px-3 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

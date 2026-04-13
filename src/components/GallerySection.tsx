@@ -48,7 +48,7 @@ const GallerySection = () => {
 
   return (
     <section id="gallery" className="section-padding bg-background">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-3 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
