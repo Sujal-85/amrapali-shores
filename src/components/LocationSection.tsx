@@ -42,7 +42,7 @@ const LocationSection = () => {
                   <ul className="text-muted-foreground space-y-1 text-sm font-devanagari">
                     <li>• मुंबई - दापोली: ≈ २२० कि.मी. (५ तास)</li>
                     <li>• पुणे - दापोली: ≈ १९० कि.मी. (४.५ तास)</li>
-                    <li>• दापोली बस स्टँड: ≈ ५ कि.मी.</li>
+                    <li>• दापोली एसटी स्टँड: ≈ २ कि.मी.</li>
                     <li>• जवळचे रेल्वे स्टेशन: खेड (४५ कि.मी.)</li>
                   </ul>
                 </div>
