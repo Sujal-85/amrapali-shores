@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
-import { Users } from "lucide-react";
+import { Users, Info } from "lucide-react";
 import { Link } from "react-router-dom";
+import whatsappIcon from "@/assets/whatsapp-icon.svg";
 import roomBed3 from "@/assets/room-bed-3.jpeg";
 import roomBed2 from "@/assets/room-bed-2.jpeg";
 import roomAc from "@/assets/room-ac.jpeg";
 import roomNonac from "@/assets/room-nonac.jpeg";
 import roomJointCottage from "@/assets/room-joint-cottage.jpeg";
+import roomCoupleCottage from "@/assets/room-couple-cottage.jpeg";
 
 const rooms = [
   {
+    id: "family-cottage-fan",
     image: roomBed3,
     title: "फॅमिली कॉटेज",
     price: "₹३,५००",
@@ -16,38 +19,50 @@ const rooms = [
     features: ["पंखा", "अटॅच्ड बाथरूम", "कॉटेज"],
   },
   {
+    id: "family-cottage-ac",
     image: roomBed2,
-    title: "कपल कॉटेज",
-    price: "₹२,५००",
-    capacity: "२ जण",
+    title: "फॅमिली कॉटेज",
+    price: "₹३,५००",
+    capacity: "५ जण",
     features: ["एसी", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
   },
   {
+    id: "ac-room",
     image: roomAc,
     title: "एसी रूम",
-    price: "₹२,०००",
-    capacity: "२ जण",
-    features: ["एसी", "अटॅच्ड बाथरूम"],
+    price: "₹२,५००",
+    capacity: "१ - ३ जण",
+    features: ["एसी", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
   },
   {
+    id: "non-ac-room",
     image: roomNonac,
     title: "नॉन एसी रूम",
     price: "₹१,५००",
     capacity: "२ जण",
-    features: ["पंखा", "अटॅच्ड बाथरूम"],
+    features: ["पंखा", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
   },
   {
+    id: "joint-cottage",
     image: roomJointCottage,
     title: "जॉइंट कॉटेज",
     price: "₹६,०००",
     capacity: "८ जण",
     features: ["पंखा", "अटॅच्ड बाथरूम", "मोठा कॉटेज"],
   },
+  {
+    id: "couple-cottage",
+    image: roomCoupleCottage,
+    title: "कपल कॉटेज",
+    price: "₹२,५००",
+    capacity: "२ जण",
+    features: ["पंखा", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
+  },
 ];
 
 const RoomsSection = () => {
   return (
-    <section id="rooms" className="section-padding bg-secondary/30">
+    <section id="rooms" className=" section-padding bg-secondary/20">
       <div className="container mx-auto px-3 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -57,11 +72,11 @@ const RoomsSection = () => {
         >
           <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">आमच्या खोल्या</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-            आरामदायक निवास व्यवस्था
+            आरामदायी व्यवस्था
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
           {rooms.map((room, i) => (
             <motion.div
               key={room.title}
@@ -95,12 +110,24 @@ const RoomsSection = () => {
                     </span>
                   ))}
                 </div>
-                <Link
-                  to="/contact"
-                  className="block text-center rounded-lg bg-primary px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg"
-                >
-                  बुकिंग चौकशी
-                </Link>
+                <div className="flex gap-2">
+                  <Link
+                    to={`/rooms/${room.id}`}
+                    className="flex-1 flex items-center justify-center gap-1 rounded-lg bg-primary px-2 py-2 md:px-3 md:py-3 text-xs md:text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg"
+                  >
+                    <Info className="h-3 w-3 md:h-4 md:w-4" />
+                    <span className="hidden md:inline">माहिती</span>
+                  </Link>
+                  <a
+                    href={`https://wa.me/918378034720?text=नमस्कार`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-1 rounded-lg bg-green-600 px-2 py-2 md:px-3 md:py-3 text-xs md:text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg"
+                  >
+                    <img src={whatsappIcon} alt="WhatsApp" className="h-3 w-3 md:h-4 md:w-4" />
+                    <span className="hidden md:inline">बुक करा</span>
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
