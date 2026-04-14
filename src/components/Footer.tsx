@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-3 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="आम्रपाली होमस्टे" className="h-10 w-10 rounded-full" />
+            <img src={logo} alt="आम्रपाली होमस्टे" className="h-12 w-12 rounded-full object-cover" />
             <div>
               <p className="font-heading font-bold text-lg">आम्रपाली होमस्टे</p>
               <p className="text-primary-foreground/60 text-sm">दापोली, महाराष्ट्र</p>
