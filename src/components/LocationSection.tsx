@@ -30,7 +30,7 @@ const LocationSection = () => {
                   <h3 className="font-heading text-lg font-bold text-foreground mb-2">पत्ता</h3>
                   <p className="text-muted-foreground font-devanagari">
                     आम्रपाली होमस्टे, दापोली,<br />
-                    रत्नागिरी जिल्हा, महाराष्ट्र - ४१५७१२
+                    रत्नागिरी जिल्हा, महाराष्ट्र ४१५७१२
                   </p>
                 </div>
               </div>
@@ -40,8 +40,8 @@ const LocationSection = () => {
                 <div>
                   <h3 className="font-heading text-lg font-bold text-foreground mb-2">मार्ग</h3>
                   <ul className="text-muted-foreground space-y-1 text-sm font-devanagari">
-                    <li>• मुंबई - दापोली: ≈ २२० कि.मी. (५ तास)</li>
-                    <li>• पुणे - दापोली: ≈ १९० कि.मी. (४.५ तास)</li>
+                    <li>• मुंबई ~ दापोली: ≈ २२० कि.मी. (५ तास)</li>
+                    <li>• पुणे ~ दापोली: ≈ १९० कि.मी. (४.५ तास)</li>
                     <li>• दापोली एसटी स्टँड: ≈ २ कि.मी.</li>
                     <li>• जवळचे रेल्वे स्टेशन: खेड (४५ कि.मी.)</li>
                   </ul>
@@ -49,7 +49,7 @@ const LocationSection = () => {
               </div>
 
               <a
-                href="https://maps.app.goo.gl/7GgEWEBnWkt3xUcdA"
+                href="https://www.google.com/maps/search/?api=1&query=17.749545483130593,73.18800160998191"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
@@ -67,7 +67,7 @@ const LocationSection = () => {
             className="rounded-xl overflow-hidden shadow-xl h-80 md:h-96"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30575.77!2d73.1!3d17.76!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be8f6fa22222222%3A0x3333333333333333!2sDapoli%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.8958586207555!2d73.18800160998191!3d17.749545483130593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be9c32149d63c3b%3A0x26be74d109a6d719!2sAmrpali%20Home%20stay!5e0!3m2!1sen!2sin!4v1776155965869!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}

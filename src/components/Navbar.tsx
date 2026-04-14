@@ -10,6 +10,7 @@ const navLinks = [
   { label: "खोल्या", href: "/rooms" },
   { label: "गॅलरी", href: "/gallery" },
   { label: "सेवा", href: "/services" },
+  { label: "पर्यटन", href: "/attractions" },
   { label: "संपर्क", href: "/contact" },
 ];
 
