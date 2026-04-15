@@ -11,7 +11,7 @@ import LocationSection from "@/components/LocationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import templeBg from "@/assets/attraction-temple.jpg";
+import templeBg from "@/assets/bg.jpeg";
 
 const FloatingSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <motion.div
