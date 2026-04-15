@@ -30,7 +30,7 @@ const rooms = [
     id: "ac-room",
     image: roomAc,
     title: "एसी रूम",
-    price: "₹२,५००",
+    price: "₹२,०००",
     capacity: "१ - ३ जण",
     features: ["एसी", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
   },
@@ -56,7 +56,7 @@ const rooms = [
     title: "कपल कॉटेज",
     price: "₹२,५००",
     capacity: "२ जण",
-    features: ["पंखा", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
+    features: ["पंखा", "एसी","अटॅच्ड बाथरूम", "प्रायव्हेट"],
   },
 ];
 
