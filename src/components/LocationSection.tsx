@@ -13,7 +13,7 @@ const LocationSection = () => {
         >
           <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">स्थान</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-            आम्हाला कसे पोहोचायचे
+            तुम्ही कसे पोहोचाल ?
           </h2>
         </motion.div>
 
