@@ -25,6 +25,7 @@ import new2 from "@/assets/gallery-new-2.jpeg";
 import new3 from "@/assets/gallery-new-3.jpeg";
 import new4 from "@/assets/gallery-new-4.jpeg";
 import new5 from "@/assets/gallery-new-5.jpeg";
+import new6 from "@/assets/gallery-new-6.jpg";
 
 const images = [
   { src: g1, alt: "बैठक व्यवस्था", span: "md:col-span-2 md:row-span-2" },
@@ -49,6 +50,7 @@ const images = [
   { src: new1, alt: "पारंपरिक कोकणी थाळी" },
   { src: new2, alt: "सांस्कृतिक कार्यक्रम" },
   { src: new5, alt: "आम्रपाली स्पेशल थाळी" },
+  { src: new6, alt: "आम्रपाली अतिथी" },
   { 
     src: new3, 
     alt: "गोव्याचे पाहुणे", 
@@ -84,7 +86,7 @@ const GallerySection = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.02 }}
-              className={`relative aspect-square md:aspect-auto overflow-hidden cursor-pointer group ${img.span || ""}`}
+              className={`relative overflow-hidden cursor-pointer group m-1 md:m-2 ${img.span || ""}`}
               onClick={() => setSelected(i)}
             >
               <img
