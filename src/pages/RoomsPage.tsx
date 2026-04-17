@@ -7,7 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const RoomsPage = () => (
   <main>
     <Navbar />
-    <PageHeader subtitle="आमच्या खोल्या" title="आरामदायक निवास व्यवस्था" />
+    <PageHeader subtitle="आमच्या खोल्या" title="आरामदायी निवास व्यवस्था" />
     <RoomsSection />
     <Footer />
     <WhatsAppButton />

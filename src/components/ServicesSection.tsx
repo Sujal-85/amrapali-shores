@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Flame, Tractor, UtensilsCrossed, Car, Map, TreePine } from "lucide-react";
 
 const services = [
-  { icon: UtensilsCrossed, title: "घरगुती शाकाहारी जेवण", desc: "शुद्ध कोकणी शाकाहारी स्वयंपाक" },
+  { icon: UtensilsCrossed, title: "घरगुती शाकाहारी जेवण", desc: "शुद्ध शाकाहारी कोकणस्थ स्वयंपाक" },
   { icon: Flame, title: "शेकोटी (कॅम्पफायर)", desc: "संध्याकाळी कुटुंबासह शेकोटीचा आनंद" },
   { icon: Tractor, title: "साईड सिन्स", desc: "दापोली साईड सिन्स करता कार किंवा ऑटोची मागणीप्रमाणे व्यवस्था" },
   { icon: Car, title: "पिकअप/ड्रॉप", desc: "दापोली बस स्थानक तसेच खेड रेल्वे स्थानक येथून मागणीप्रमाणे ऑटो किंवा कारची पिकप ड्रॉप ची व्यवस्था." },
