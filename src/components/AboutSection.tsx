@@ -19,7 +19,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">आमच्याबद्दल</p>
+          <p className="text-accent font-semibold mb-2 marathi text-sm">आमच्याबद्दल</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
             आम्रपाली होमस्टे, दापोली
           </h2>

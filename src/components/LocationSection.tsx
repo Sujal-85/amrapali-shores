@@ -28,9 +28,9 @@ const LocationSection = () => {
                 <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-heading text-lg font-bold text-foreground mb-2">पत्ता</h3>
-                  <p className="text-muted-foreground font-devanagari">
+                  <p className="text-muted-foreground marathi">
                     आम्रपाली होमस्टे, दापोली,<br />
-                    रत्नागिरी जिल्हा, महाराष्ट्र ४१५७१२
+                    रत्नागिरी जिल्हा, {"\u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"} ४१५७१२
                   </p>
                 </div>
               </div>

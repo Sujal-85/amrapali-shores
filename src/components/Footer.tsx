@@ -10,7 +10,7 @@ const Footer = () => {
             <img src={logo} alt="आम्रपाली होमस्टे" className="h-12 w-12 rounded-full object-cover" />
             <div>
               <p className="font-heading font-bold text-lg">आम्रपाली होमस्टे</p>
-              <p className="text-primary-foreground/60 text-sm">दापोली, महाराष्ट्र</p>
+              <p className="text-primary-foreground/70 text-[13px] marathi leading-relaxed">दापोली, {"\u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"}</p>
             </div>
           </Link>
           <div className="flex flex-wrap gap-6 text-sm text-primary-foreground/70">

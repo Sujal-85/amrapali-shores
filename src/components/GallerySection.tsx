@@ -20,27 +20,42 @@ import roomBed3 from "@/assets/room-bed-3.jpeg";
 import roomInterior1 from "@/assets/room-interior-1.jpeg";
 import roomNonac from "@/assets/room-nonac.jpeg";
 import roomJointCottage from "@/assets/room-joint-cottage.jpeg";
+import new1 from "@/assets/gallery-new-1.jpeg";
+import new2 from "@/assets/gallery-new-2.jpeg";
+import new3 from "@/assets/gallery-new-3.jpeg";
+import new4 from "@/assets/gallery-new-4.jpeg";
+import new5 from "@/assets/gallery-new-5.jpeg";
 
 const images = [
-  { src: g1, alt: "बैठक व्यवस्था" },
-  { src: food3, alt: "कोकणी जेवण" },
+  { src: g1, alt: "बैठक व्यवस्था", span: "md:col-span-2 md:row-span-2" },
+  { src: food3, alt: "आम्रपाली स्पेशल कोकणस्थ थाळी आणि सुरुची शाकाहारी थाळीचा आस्वाद" },
   { src: g4, alt: "प्रवेशद्वार" },
   { src: roomBed1, alt: "बेडरूम" },
-  { src: g5, alt: "बाग" },
+  { src: g5, alt: "बाग", span: "md:col-span-2" },
   { src: food1, alt: "पारंपरिक स्वयंपाक" },
   { src: nature1, alt: "निसर्ग" },
   { src: g6, alt: "सजावट" },
-  { src: food2, alt: "भाकरी थाळी" },
+  { src: food2, alt: "भाकरी थाळी", span: "md:row-span-2" },
   { src: roomBed2, alt: "फॅमिली रूम" },
-  { src: g7, alt: "बाहेरील दृश्य" },
+  { src: g7, alt: "बाहेरील दृश्य", span: "md:col-span-2 md:row-span-2" },
   { src: food4, alt: "उपवास थाळी" },
   { src: roomInterior1, alt: "खोलीचे दृश्य" },
   { src: roomNonac, alt: "नॉन एसी रूम" },
   { src: g8, alt: "आतील दृश्य" },
   { src: roomBed3, alt: "ग्रुप रूम" },
-  { src: roomJointCottage, alt: "जॉइंट कॉटेज" },
+  { src: roomJointCottage, alt: "जॉइंट कॉटेज", span: "md:col-span-2" },
   { src: g2, alt: "हॉल" },
   { src: g3, alt: "परिसर" },
+  { src: new1, alt: "पारंपरिक कोकणी थाळी" },
+  { src: new2, alt: "सांस्कृतिक कार्यक्रम" },
+  { src: new5, alt: "आम्रपाली स्पेशल थाळी" },
+  { 
+    src: new3, 
+    alt: "गोव्याचे पाहुणे", 
+    caption: "डिसेंबरमध्ये गोव्याच्या पाहुण्यांचीही आम्रपालीला पसंती... सात्विक पर्यटनाचा आनंद.",
+    span: "md:col-span-2"
+  },
+  { src: new4, alt: "ग्रुप डायनिंग अनुभव" },
 ];
 
 const GallerySection = () => {
@@ -55,32 +70,36 @@ const GallerySection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">गॅलरी</p>
+          <p className="text-accent font-semibold mb-2 marathi text-sm">गॅलरी</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
             आमचा परिसर
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 grid-flow-dense">
           {images.map((img, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className={`relative overflow-hidden rounded-xl cursor-pointer group ${
-                i === 0 || i === 6 || i === 12 ? "md:col-span-2 md:row-span-2" : ""
-              }`}
+              transition={{ duration: 0.5, delay: i * 0.02 }}
+              className={`relative aspect-square md:aspect-auto overflow-hidden cursor-pointer group ${img.span || ""}`}
               onClick={() => setSelected(i)}
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className="w-full h-full object-cover aspect-square transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
+              
+              {img.caption && (
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-3 md:p-4 text-white text-[10px] md:text-sm text-center leading-relaxed backdrop-blur-sm border-t border-white/10">
+                  {img.caption}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

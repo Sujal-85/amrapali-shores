@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import templeImg from "@/assets/attraction-temple.jpg";
+import templeImg from "@/assets/nature-1.jpeg";
 import beachSunsetImg from "@/assets/attraction-beach-sunset.jpg";
 import parshuramImg from "@/assets/attraction-parshuram.jpg";
 import waterSportsImg from "@/assets/attraction-water-sports.jpg";
@@ -70,7 +70,7 @@ const HeroSection = () => {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 1.2,
+        duration: 0.2,
         ease: [0.25, 0.1, 0.25, 1],
       },
     },
@@ -78,7 +78,7 @@ const HeroSection = () => {
       x: direction < 0 ? "100%" : "-100%",
       opacity: 0,
       transition: {
-        duration: 1.2,
+        duration: 0.2,
         ease: [0.25, 0.1, 0.25, 1],
       },
     }),
