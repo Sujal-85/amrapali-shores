@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Playfair Display", "Noto Sans Devanagari", "serif"],
-        body: ["DM Sans", "Noto Sans Devanagari", "sans-serif"],
-        devanagari: ["Noto Sans Devanagari", "sans-serif"],
+        heading: ["Tiro Devanagari Marathi", "Noto Sans Devanagari", "NotoSansDevanagari", "Poppins", "Playfair Display", "serif"],
+        body: ["Tiro Devanagari Marathi", "Noto Sans Devanagari", "NotoSansDevanagari", "Poppins", "DM Sans", "sans-serif"],
+        devanagari: ["Tiro Devanagari Marathi", "Noto Sans Devanagari", "NotoSansDevanagari", "Poppins", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

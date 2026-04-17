@@ -202,15 +202,15 @@ const AttractionsMap = () => {
         >
           <div className="flex items-center gap-2 px-4 py-2 bg-green-100/80 backdrop-blur-sm rounded-full">
             <Trees className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-medium text-green-800">महाराष्ट्रात सर्वप्रथम कचरा मुक्त पर्यटन</span>
+            <span className="text-sm font-medium text-green-800 marathi">{"\u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u093e\u0924"} सर्वप्रथम कचरा मुक्त पर्यटन</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 bg-amber-100/80 backdrop-blur-sm rounded-full">
             <Tent className="w-4 h-4 text-amber-600" />
-            <span className="text-sm font-medium text-amber-800">इको व्हिलेज टुरिझम</span>
+            <span className="text-sm font-medium text-amber-800 marathi">इको व्हिलेज टुरिझम</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 bg-orange-100/80 backdrop-blur-sm rounded-full">
             <Home className="w-4 h-4 text-orange-600" />
-            <span className="text-sm font-medium text-orange-800">१३० वर्षांपूर्वीचे वारसागत घर</span>
+            <span className="text-sm font-medium text-orange-800 marathi">१३० वर्षांपूर्वीचे वारसागत घर</span>
           </div>
         </motion.div>
       </div>
