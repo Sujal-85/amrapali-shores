@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, Info } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import whatsappIcon from "@/assets/whatsapp-icon.svg";
 import roomBed3 from "@/assets/room-bed-3.jpeg";
 import roomBed2 from "@/assets/room-bed-2.jpeg";
@@ -61,6 +61,8 @@ const rooms = [
 ];
 
 const RoomsSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="rooms" className=" section-padding bg-secondary/20">
       <div className="container mx-auto px-3 md:px-6">
@@ -84,7 +86,8 @@ const RoomsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="glass-card overflow-hidden hover-card-effect group"
+              className="glass-card overflow-hidden hover-card-effect group cursor-pointer"
+              onClick={() => navigate(`/rooms/${room.id}`)}
             >
               <div className="relative overflow-hidden h-40 md:h-56">
                 <img

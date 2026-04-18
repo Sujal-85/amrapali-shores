@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import g1 from "@/assets/gallery-1.jpeg";
 import g2 from "@/assets/gallery-2.jpeg";
 import g3 from "@/assets/gallery-3.jpeg";
@@ -79,6 +79,18 @@ const images = [
 const GallerySection = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
+  const handlePrevious = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selected === null) return;
+    setSelected(selected === 0 ? images.length - 1 : selected - 1);
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selected === null) return;
+    setSelected(selected === images.length - 1 ? 0 : selected + 1);
+  };
+
   return (
     <section id="gallery" className="section-padding bg-background">
       <div className="container mx-auto px-2 md:px-4">
@@ -135,14 +147,30 @@ const GallerySection = () => {
           >
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-background/20 text-primary-foreground hover:bg-background/40 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-background/20 text-primary-foreground hover:bg-background/40 transition-colors z-10"
             >
               <X className="h-6 w-6" />
             </button>
+
+            <button
+              onClick={handlePrevious}
+              className="absolute left-2 md:left-4 p-3 md:p-4 rounded-full bg-background/20 text-primary-foreground hover:bg-background/40 transition-colors z-10"
+            >
+              <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+            </button>
+
+            <button
+              onClick={handleNext}
+              className="absolute right-2 md:right-4 p-3 md:p-4 rounded-full bg-background/20 text-primary-foreground hover:bg-background/40 transition-colors z-10"
+            >
+              <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+            </button>
+
             <motion.img
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
+              key={selected}
               src={images[selected].src}
               alt={images[selected].alt}
               className="max-w-full max-h-[85vh] rounded-xl object-contain"
