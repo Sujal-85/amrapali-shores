@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import templeImg from "@/assets/nature-1.jpeg";
 import beachSunsetImg from "@/assets/attraction-beach-sunset.jpg";
-import parshuramImg from "@/assets/attraction-parshuram.jpg";
 import waterSportsImg from "@/assets/attraction-water-sports.jpg";
 import beachPalmImg from "@/assets/attraction-beach-palm.jpg";
 
@@ -18,11 +17,6 @@ const slides = [
     image: beachSunsetImg,
     title: "सूर्यास्त वेळी बीच",
     subtitle: "निसर्गाचे सौंदर्य",
-  },
-  {
-    image: parshuramImg,
-    title: "भगवान परशुराम स्टॅचू",
-    subtitle: "जगातील सर्वात मोठी स्टॅचू",
   },
   {
     image: waterSportsImg,
