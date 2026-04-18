@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { MapPin, Navigation } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const LocationSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="section-padding bg-secondary/30">
       <div className="container mx-auto px-3 md:px-6">
@@ -23,7 +26,10 @@ const LocationSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="glass-card p-8">
+            <div 
+              className="glass-card p-8 cursor-pointer hover:shadow-2xl transition-shadow duration-300"
+              onClick={() => navigate('/location')}
+            >
               <div className="flex items-start gap-3 mb-6">
                 <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
