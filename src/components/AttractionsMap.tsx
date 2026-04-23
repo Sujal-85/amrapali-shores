@@ -19,7 +19,7 @@ const initialAttractions = [
   { id: 13, icon: Home, distance: "24 km", type: "heritage", color: "#D97706", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944666.5000735894!2d70.88663015624999!3d17.83034700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be9db7254c922bb%3A0x8bc8e9e2686f9ccb!2sSANE%20GURUJI%20MSCIT%20CENTER%20PALGAD!5e0!3m2!1sen!2sin!4v1776156503068!5m2!1sen!2sin" },
 ];
 
-const amrapaliMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.8958586207555!2d73.18800160998191!3d17.749545483130593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be9c32149d63c3b%3A0x26be74d109a6d719!2sAmrpali%20Home%20stay!5e0!3m2!1sen!2sin!4v1776155965869!5m2!1sen!2sin";
+const amrapaliMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.03251404434!2d73.18940289999999!3d17.7431071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be9c3b0c7beabb7%3A0x3ca8c48fe4159679!2sAmrapali%20Home%20Stay!5e0!3m2!1sen!2sin!4v1776947643558!5m2!1sen!2sin";
 
 const GoogleMapEmbed = ({ src, title, onReset, isAttraction }: { src: string; title: string; onReset?: () => void; isAttraction?: boolean }) => {
   const { t } = useTranslation();
@@ -68,7 +68,7 @@ const GoogleMapEmbed = ({ src, title, onReset, isAttraction }: { src: string; ti
       )}
 
       <a
-        href={isAttraction ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(title)}` : "https://www.google.com/maps/dir/?api=1&destination=17.749545483130593,73.18800160998191"}
+        href={isAttraction ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(title)}` : "https://www.google.com/maps/dir/?api=1&destination=17.7431071,73.1894029"}
         target="_blank"
         rel="noopener noreferrer"
         className="absolute bottom-4 right-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105"

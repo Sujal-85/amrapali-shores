@@ -56,7 +56,7 @@ const LocationSection = () => {
               </div>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=17.749545483130593,73.18800160998191"
+                href="https://www.google.com/maps/dir/?api=1&destination=17.7431071,73.1894029"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
@@ -74,7 +74,7 @@ const LocationSection = () => {
             className="rounded-xl overflow-hidden shadow-xl h-80 md:h-96"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.8958586207555!2d73.18800160998191!3d17.749545483130593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be9c32149d63c3b%3A0x26be74d109a6d719!2sAmrpali%20Home%20stay!5e0!3m2!1sen!2sin!4v1776155965869!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.03251404434!2d73.18940289999999!3d17.7431071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be9c3b0c7beabb7%3A0x3ca8c48fe4159679!2sAmrapali%20Home%20Stay!5e0!3m2!1sen!2sin!4v1776947643558!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
