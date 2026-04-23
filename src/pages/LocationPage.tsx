@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { MapPin, Navigation, Phone, Mail, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const LocationPage = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -15,9 +18,9 @@ const LocationPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">स्थान</p>
+            <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">{t("location.tag")}</p>
             <h1 className="font-heading text-4xl md:text-6xl font-bold text-foreground mb-4">
-              आम्रपाली होमस्टे स्थान
+              {t("nav.brand")} {t("location.tag")}
             </h1>
           </motion.div>
 
@@ -30,10 +33,9 @@ const LocationPage = () => {
               <div className="flex items-start gap-3 mb-6">
                 <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">पत्ता</h3>
-                  <p className="text-muted-foreground marathi text-lg">
-                    आम्रपाली होमस्टे, दापोली,<br />
-                    रत्नागिरी जिल्हा, महाराष्ट्र ४१५७१२
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">{t("location.address")}</h3>
+                  <p className="text-muted-foreground text-lg">
+                    {t("location.fullAddress")}
                   </p>
                 </div>
               </div>
@@ -41,9 +43,9 @@ const LocationPage = () => {
               <div className="flex items-start gap-3 mb-6">
                 <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">संपर्क क्रमांक</h3>
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">{t("location.contactNumber")}</h3>
                   <p className="text-muted-foreground text-lg">
-                    +91 ९८७६५ ४३२१०
+                    +91 83780 34720
                   </p>
                 </div>
               </div>
@@ -51,7 +53,7 @@ const LocationPage = () => {
               <div className="flex items-start gap-3 mb-6">
                 <Mail className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">ईमेल</h3>
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">{t("location.email")}</h3>
                   <p className="text-muted-foreground text-lg">
                     info@amrapali-homestay.com
                   </p>
@@ -61,10 +63,9 @@ const LocationPage = () => {
               <div className="flex items-start gap-3 mb-6">
                 <Clock className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">चेक-इन/चेक-आउट</h3>
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">{t("contact.form.checkin")}/{t("contact.form.checkout")}</h3>
                   <p className="text-muted-foreground text-lg">
-                    चेक-इन: दुपारी १२:०० वाजता<br />
-                    चेक-आउट: सकाळी ११:०० वाजता
+                    {t("contact.timings")}
                   </p>
                 </div>
               </div>
@@ -76,7 +77,7 @@ const LocationPage = () => {
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-accent-foreground transition-transform hover:scale-105"
               >
                 <Navigation className="h-5 w-5" />
-                Google Maps वर पहा
+                {t("location.viewOnMaps")}
               </a>
             </motion.div>
 
@@ -93,7 +94,7 @@ const LocationPage = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="आम्रपाली होमस्टे, दापोली"
+                title={t("nav.brand")}
               />
             </motion.div>
           </div>
@@ -104,37 +105,37 @@ const LocationPage = () => {
             className="glass-card p-8"
           >
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
-              मार्ग मार्गदर्शन
+              {t("location.routeGuide")}
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-4">
-                <h3 className="font-heading text-lg font-semibold text-accent">मुंबई ते दापोली</h3>
-                <ul className="text-muted-foreground space-y-2 text-base font-devanagari">
-                  <li>• अंतर: ≈ २२० कि.मी.</li>
-                  <li>• वेळ: ≈ ५ तास</li>
-                  <li>• मार्ग: NH48 वरून NH66</li>
+                <h3 className="font-heading text-lg font-semibold text-accent">{t("location.mumbaiToDapoli")}</h3>
+                <ul className="text-muted-foreground space-y-2 text-base">
+                  <li>• {t("location.distance")} ≈ 220 km</li>
+                  <li>• {t("location.time")} ≈ 5 hours</li>
+                  <li>• {t("location.path")} NH48 to NH66</li>
                 </ul>
               </div>
               <div className="space-y-4">
-                <h3 className="font-heading text-lg font-semibold text-accent">पुणे ते दापोली</h3>
-                <ul className="text-muted-foreground space-y-2 text-base font-devanagari">
-                  <li>• अंतर: ≈ १९० कि.मी.</li>
-                  <li>• वेळ: ≈ ४.५ तास</li>
-                  <li>• मार्ग: NH60 वरून NH66</li>
+                <h3 className="font-heading text-lg font-semibold text-accent">{t("location.puneToDapoli")}</h3>
+                <ul className="text-muted-foreground space-y-2 text-base">
+                  <li>• {t("location.distance")} ≈ 190 km</li>
+                  <li>• {t("location.time")} ≈ 4.5 hours</li>
+                  <li>• {t("location.path")} NH60 to NH66</li>
                 </ul>
               </div>
               <div className="space-y-4">
-                <h3 className="font-heading text-lg font-semibold text-accent">दापोली एसटी स्टँड</h3>
-                <ul className="text-muted-foreground space-y-2 text-base font-devanagari">
-                  <li>• अंतर: ≈ २ कि.मी.</li>
-                  <li>• रिक्षा/टॅक्सी उपलब्ध</li>
+                <h3 className="font-heading text-lg font-semibold text-accent">{t("location.dapoliStStand")}</h3>
+                <ul className="text-muted-foreground space-y-2 text-base">
+                  <li>• {t("location.distance")} ≈ 2 km</li>
+                  <li>• {t("location.autoAvailable")}</li>
                 </ul>
               </div>
               <div className="space-y-4">
-                <h3 className="font-heading text-lg font-semibold text-accent">जवळचे रेल्वे स्टेशन</h3>
-                <ul className="text-muted-foreground space-y-2 text-base font-devanagari">
-                  <li>• खेड: २९ कि.मी.</li>
-                  <li>• रत्नागिरी: ६० कि.मी.</li>
+                <h3 className="font-heading text-lg font-semibold text-accent">{t("location.nearestRailway")}</h3>
+                <ul className="text-muted-foreground space-y-2 text-base">
+                  <li>• Khed: 29 km</li>
+                  <li>• Ratnagiri: 60 km</li>
                 </ul>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import g1 from "@/assets/gallery-1.jpeg";
 import g2 from "@/assets/gallery-2.jpeg";
 import g3 from "@/assets/gallery-3.jpeg";
@@ -35,49 +36,55 @@ import img6 from "@/assets/img6.jpeg";
 import img7 from "@/assets/img7.jpeg";
 import img8 from "@/assets/img8.jpeg";
 
-const images = [
-  { src: g1, alt: "बैठक व्यवस्था", caption: "आरामदायी बैठक व्यवस्था", span: "md:col-span-2 md:row-span-2" },
-  { src: food3, alt: "आम्रपाली स्पेशल कोकणस्थ थाळी", caption: "आम्रपाली स्पेशल कोकणस्थ थाळी आणि सुरुची शाकाहारी थाळीचा आस्वाद" },
-  { src: g4, alt: "प्रवेशद्वार", caption: "सुंदर प्रवेशद्वार" },
-  { src: roomBed1, alt: "बेडरूम", caption: "आरामदायी बेडरूम" },
-  { src: g5, alt: "बाग", caption: "हिरवीगार बाग", span: "md:col-span-2" },
-  { src: food1, alt: "पोपटी पार्टीची तयारी", caption: "" },
-  { src: nature1, alt: "निसर्ग", caption: "निसर्गाचे सौंदर्य" },
-  { src: g6, alt: "सजावट", caption: "सुंदर सजावट" },
-  { src: food2, alt: "दडपे पोहे", caption: "आम्रपाली स्पेशल दडपे पोहे" },
-  { src: roomBed2, alt: "फॅमिली रूम", caption: "कुटुंबासाठी फॅमिली रूम" },
-  { src: g7, alt: "बाहेरील दृश्य", caption: "बाहेरील सुंदर दृश्य", span: "md:col-span-2 md:row-span-2" },
-  { src: food4, alt: "उपवास थाळी", caption: "चवीष्ट उपवास थाळी" },
-  { src: roomInterior1, alt: "खोलीचे दृश्य", caption: "सुंदर खोलीचे दृश्य" },
-  { src: roomNonac, alt: "नॉन एसी रूम", caption: "आरामदायी नॉन एसी रूम" },
-  { src: g8, alt: "आतील दृश्य", caption: "आतील सुंदर दृश्य" },
-  { src: roomBed3, alt: "ग्रुप रूम", caption: "मोठ्या गटासाठी ग्रुप रूम" },
-  { src: roomJointCottage, alt: "जॉइंट कॉटेज", caption: "कुटुंबासाठी जॉइंट कॉटेज", span: "md:col-span-2" },
-  { src: g2, alt: "हॉल", caption: "विशाल हॉल" },
-  { src: g3, alt: "परिसर", caption: "शांत परिसर" },
-  { src: new1, alt: "कोकणस्थ थाळी", caption: "आम्रपाली स्पेशल कोकणस्थ थाळी – शुद्ध शाकाहारी पारंपरिक भोजन" },
-  { src: new2, alt: "सांस्कृतिक कार्यक्रम", caption: "सांस्कृतिक कार्यक्रमाचा आनंद" },
-  { src: new5, alt: "कोकणस्थ थाळी", caption: "आम्रपाली स्पेशल कोकणस्थ थाळी – शुद्ध शाकाहारी पारंपरिक भोजन" },
-  { src: new6, alt: "आम्रपाली अतिथी", caption: "आम्रपालीचे आनंददायक अतिथी" },
+const initialImages = [
+  { src: g1, span: "md:col-span-2 md:row-span-2" },
+  { src: food3 },
+  { src: g4 },
+  { src: roomBed1 },
+  { src: g5, span: "md:col-span-2" },
+  { src: food1 },
+  { src: nature1 },
+  { src: g6 },
+  { src: food2 },
+  { src: roomBed2 },
+  { src: g7, span: "md:col-span-2 md:row-span-2" },
+  { src: food4 },
+  { src: roomInterior1 },
+  { src: roomNonac },
+  { src: g8 },
+  { src: roomBed3 },
+  { src: roomJointCottage, span: "md:col-span-2" },
+  { src: g2 },
+  { src: g3 },
+  { src: new1 },
+  { src: new2 },
+  { src: new5 },
+  { src: new6 },
   { 
     src: new3, 
-    alt: "गोव्याचे पाहुणे", 
-    caption: "डिसेंबरमध्ये गोव्याच्या पाहुण्यांचीही आम्रपालीला पसंती... सात्विक पर्यटनाचा आनंद.",
     span: "md:col-span-2"
   },
-  { src: new4, alt: "ग्रुप डायनिंग अनुभव", caption: "ग्रुपसोबत डायनिंगचा आनंद" },
-  { src: img1, alt: "पर्यावरणीय साहलीचा आनंद", caption: "आम्रपालीची सुंदर वास्तू" },
-  { src: img2, alt: "मिसळ थाळी", caption: "" },
-  { src: img3, alt: "मिसळ पार्टी", caption: "कुटुंबासोबत आनंदी क्षण" },
-  { src: img4, alt: "मकरंद अनासपुरे त्यांच्याबरोबर भेट", caption: "" },
-  { src: img5, alt: "आम्रपाली स्पेशल कोकणस्थ थाळी", caption: "शुद्ध शाकाहारी" },
-  { src: img6, alt: "आम्रपालीत अनुभवला युवानंद", caption: "" },
-  { src: img7, alt: "सिंधुताई सपकाळ यांची अम्रपाली होम स्टेला भेट", caption: "निसर्गाच्या कुशीत" },
-  { src: img8, alt: "कॅम्पफायर (पोपटी)", caption: "शांत आणि शुद्ध वातावरण" },
+  { src: new4 },
+  { src: img1 },
+  { src: img2 },
+  { src: img3 },
+  { src: img4 },
+  { src: img5 },
+  { src: img6 },
+  { src: img7 },
+  { src: img8 },
 ];
 
 const GallerySection = () => {
+  const { t } = useTranslation();
   const [selected, setSelected] = useState<number | null>(null);
+
+  const galleryData = t('gallery.items', { returnObjects: true }) as Array<{ alt: string; caption: string }>;
+  const images = initialImages.map((img, i) => ({
+    ...img,
+    alt: galleryData[i]?.alt || "",
+    caption: galleryData[i]?.caption || ""
+  }));
 
   const handlePrevious = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -100,9 +107,9 @@ const GallerySection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-semibold mb-2 marathi text-sm">गॅलरी</p>
+          <p className="text-accent font-semibold mb-2 text-sm">{t("gallery.tag")}</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-            आमचा परिसर
+            {t("gallery.title")}
           </h2>
         </motion.div>
 

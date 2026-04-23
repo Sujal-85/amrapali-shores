@@ -1,0 +1,274 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "rooms": "Rooms",
+    "gallery": "Gallery",
+    "services": "Services",
+    "attractions": "Attractions",
+    "contact": "Contact",
+    "brand": "Amrapali Homestay",
+    "callUs": "Call Us",
+    "language": "Language",
+    "dapoliMaharashtra": "Dapoli, Maharashtra"
+  },
+  "hero": {
+    "slides": [
+      {
+        "title": "Traditional Temple",
+        "subtitle": "History and Spirituality"
+      },
+      {
+        "title": "Beach at Sunset",
+        "subtitle": "Natural Beauty"
+      },
+      {
+        "title": "Water Sports",
+        "subtitle": "Thrilling Experience"
+      },
+      {
+        "title": "Coconut Coast",
+        "subtitle": "Peace and Relaxation"
+      }
+    ],
+    "mainTitle": "Experience peaceful life",
+    "subTitle": "in the lap of nature",
+    "description": "Pure vegetarian homestay in Dapoli — with real village experience",
+    "bookNow": "Book Now",
+    "viewRooms": "View Rooms"
+  },
+  "about": {
+    "tag": "About Us",
+    "title": "Amrapali Homestay, Dapoli",
+    "owner": {
+      "name": "Dr. Prashant Paranjpe",
+      "role": "Founder, Amrapali Homestay",
+      "p1": "Amrapali Homestay, located in Dapoli taluka of Konkan, is an ideal destination for nature lovers. At our homestay, you get an experience of real village life - fresh air, lush green trees, chirping birds and homemade pure vegetarian food.",
+      "p2": "Introduction to eco-friendly lifestyle and nature reading. A unique blend of literature, environment and tourism. Amrapali Homestay is the best place to spend a pleasant holiday with family and relax in the company of nature."
+    },
+    "features": [
+      { "title": "Pure Nature", "desc": "Peaceful environment surrounded by lush green trees" },
+      { "title": "Family Atmosphere", "desc": "Safe and enjoyable for all age groups" },
+      { "title": "Pure Vegetarian", "desc": "Alcohol and smoking free premises" }
+    ]
+  },
+  "rooms": {
+    "tag": "Our Rooms",
+    "title": "Comfortable Accommodation",
+    "perNight": "/night",
+    "upTo": "up to",
+    "info": "Info",
+    "book": "Book",
+    "backToAll": "Back to all rooms",
+    "notFound": "Room not found",
+    "amenitiesLabel": "Amenities:",
+    "bookOnWhatsapp": "Book on WhatsApp",
+    "types": {
+      "family-cottage-fan": "Family Cottage (Fan)",
+      "family-cottage-ac": "Family Cottage (AC)",
+      "ac-room": "AC Room",
+      "non-ac-room": "Non AC Room",
+      "joint-cottage": "Joint Cottage",
+      "couple-cottage": "Couple Cottage"
+    },
+    "amenities": {
+      "fan": "Fan",
+      "attached-bathroom": "Attached Bathroom",
+      "cottage": "Cottage",
+      "private": "Private",
+      "big-cottage": "Big Cottage",
+      "ac": "AC",
+      "private-entry": "Private Entry",
+      "garden-view": "Garden View",
+      "free-wifi": "Free WiFi",
+      "tv": "TV",
+      "economic": "Economic",
+      "great-for-groups": "Great for Groups",
+      "cooler": "Cooler"
+    },
+    "descriptions": {
+      "family-cottage-fan": "This cottage is perfect for families. It has a fan, attached bathroom and a beautiful garden view.",
+      "family-cottage-ac": "This AC cottage is comfortable even in summer. Comes with a private entry and modern amenities.",
+      "ac-room": "Excellent AC room for 1 to 3 people. Comfortable living with all modern amenities.",
+      "non-ac-room": "Best stay option in budget. Comfortable room for 2 people.",
+      "joint-cottage": "Special cottage for large groups. Enough space for 8 people and all facilities.",
+      "couple-cottage": "Ideal cottage for couples. Private, comfortable and clean."
+    }
+  },
+  "services": {
+    "tag": "Services & Experiences",
+    "title": "Special Experience",
+    "list": [
+      { "title": "Homemade Vegetarian Food", "desc": "Pure vegetarian Konkanastha cooking" },
+      { "title": "Campfire", "desc": "Enjoy campfire with family in the evening" },
+      { "title": "Side Scenes", "desc": "Arrangement of car or auto for Dapoli side scenes on request" },
+      { "title": "Pickup/Drop", "desc": "Pickup and drop from Dapoli bus station and Khed railway station on request." },
+      { "title": "Tourist Spots Visit", "desc": "Information about all tourist spots in Dapoli taluka available." },
+      { "title": "Nature Farm Visit", "desc": "Visit mango and cashew orchards" }
+    ]
+  },
+  "why": {
+    "tag": "Why Us?",
+    "title": "Why choose Amrapali Homestay?",
+    "reasons": [
+      "Best family homestay in Dapoli",
+      "Complete pure vegetarian food",
+      "Alcohol and smoking free premises",
+      "Scenic quiet environment",
+      "Experience of real village life",
+      "Close to beach and forts",
+      "Clean and comfortable rooms",
+      "Affordable rates"
+    ]
+  },
+  "testimonials": {
+    "tag": "Testimonials",
+    "title": "What our guests say...",
+    "list": [
+      {
+        "name": "Sagar Oak, Pune.",
+        "text": "On Tuesday afternoon, four of us arrived at \"Amrapali Homestay\" in Dapoli from Khed. The atmosphere there was very pure. All their arrangements were made with a practical view of not harming nature in any way. Asmita and Prashant Paranjpe themselves were at our service with the help of their assistant Pramod. It should be mentioned here that Prashant was awarded an honorary doctorate by the University of Colombo, Sri Lanka just two months ago for his work in nature conservation. The homemade delicious food prepared by Asmita was a treat."
+      },
+      {
+        "name": "Mr. Rajesh Patil",
+        "text": "We stayed with family in Amrapali Homestay. Very quiet atmosphere, delicious food and very loving behavior of the owners. Will definitely come again!"
+      },
+      {
+        "name": "Mrs. Anita Deshmukh",
+        "text": "Best homestay in Dapoli! Children loved it very much. The bullock cart ride and campfire experience was unforgettable."
+      },
+      {
+        "name": "Mr. Suhas Joshi",
+        "text": "Amazing taste of pure vegetarian food. Great place for relaxation in the company of nature. Recommend to everyone."
+      }
+    ]
+  },
+  "location": {
+    "tag": "Location",
+    "title": "How will you reach?",
+    "address": "Address",
+    "fullAddress": "Amrapali Homestay, Dapoli, Ratnagiri District, Maharashtra 415712",
+    "contactNumber": "Contact Number",
+    "email": "Email",
+    "route": "Route",
+    "routeGuide": "Route Guidance",
+    "mumbaiToDapoli": "Mumbai to Dapoli",
+    "puneToDapoli": "Pune to Dapoli",
+    "dapoliStStand": "Dapoli ST Stand",
+    "nearestRailway": "Nearest Railway Station",
+    "distance": "Distance:",
+    "time": "Time:",
+    "path": "Route:",
+    "autoAvailable": "Rickshaw/Taxi available",
+    "routes": [
+      "Mumbai ~ Dapoli: ≈ 220 km (5 hours)",
+      "Pune ~ Dapoli: ≈ 190 km (4.5 hours)",
+      "Dapoli ST Stand: ≈ 2 km",
+      "Nearest Railway Station: Khed (29 km)"
+    ],
+    "viewOnMaps": "View on Google Maps"
+  },
+  "contact": {
+    "tag": "Contact",
+    "title": "Booking Inquiry",
+    "directContact": "Direct Contact",
+    "phoneWhatsapp": "Phone / WhatsApp",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "notice": "Please contact at least 3 days in advance for booking.",
+    "timings": "Check-in: 12:00 PM | Check-out: 11:00 AM",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "Full Name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+91 XXXXX XXXXX",
+      "checkin": "Check-in",
+      "checkout": "Check-out",
+      "message": "Message (Optional)",
+      "messagePlaceholder": "Any special instructions...",
+      "send": "Send on WhatsApp"
+    }
+  },
+  "gallery": {
+    "tag": "Gallery",
+    "title": "Our Premises",
+    "items": [
+      { "alt": "Seating Area", "caption": "Comfortable seating arrangement" },
+      { "alt": "Amrapali Special Konkanastha Thali", "caption": "Enjoy Amrapali Special Konkanastha Thali and Suruchi Vegetarian Thali" },
+      { "alt": "Entrance", "caption": "Beautiful Entrance" },
+      { "alt": "Bedroom", "caption": "Comfortable Bedroom" },
+      { "alt": "Garden", "caption": "Lush Green Garden" },
+      { "alt": "Popati Party Preparation", "caption": "" },
+      { "alt": "Nature", "caption": "Beauty of Nature" },
+      { "alt": "Decoration", "caption": "Beautiful Decoration" },
+      { "alt": "Dadpe Pohe", "caption": "Amrapali Special Dadpe Pohe" },
+      { "alt": "Family Room", "caption": "Family Room for all" },
+      { "alt": "Exterior View", "caption": "Beautiful Exterior View" },
+      { "alt": "Upvas Thali", "caption": "Delicious Fasting Thali" },
+      { "alt": "Room View", "caption": "Beautiful Room View" },
+      { "alt": "Non AC Room", "caption": "Comfortable Non AC Room" },
+      { "alt": "Interior View", "caption": "Beautiful Interior View" },
+      { "alt": "Group Room", "caption": "Group Room for large groups" },
+      { "alt": "Joint Cottage", "caption": "Joint Cottage for families" },
+      { "alt": "Hall", "caption": "Spacious Hall" },
+      { "alt": "Premises", "caption": "Peaceful Premises" },
+      { "alt": "Konkanastha Thali", "caption": "Amrapali Special Konkanastha Thali – Pure Vegetarian Traditional Meal" },
+      { "alt": "Cultural Program", "caption": "Enjoying Cultural Program" },
+      { "alt": "Konkanastha Thali", "caption": "Amrapali Special Konkanastha Thali – Pure Vegetarian Traditional Meal" },
+      { "alt": "Amrapali Guests", "caption": "Happy Guests at Amrapali" },
+      { "alt": "Guests from Goa", "caption": "Guests from Goa also prefer Amrapali in December... Enjoying satvik tourism." },
+      { "alt": "Group Dining Experience", "caption": "Enjoying Dining with Group" },
+      { "alt": "Environmental Trip", "caption": "Beautiful architecture of Amrapali" },
+      { "alt": "Misal Thali", "caption": "" },
+      { "alt": "Misal Party", "caption": "Happy moments with family" },
+      { "alt": "Meeting with Makrand Anaspure", "caption": "" },
+      { "alt": "Amrapali Special Konkanastha Thali", "caption": "Pure Vegetarian" },
+      { "alt": "Experienced Yuvanand at Amrapali", "caption": "" },
+      { "alt": "Sindhutai Sapkal visited Amrapali Homestay", "caption": "In the lap of nature" },
+      { "alt": "Campfire (Popati)", "caption": "Quiet and Pure Environment" }
+    ]
+  },
+  "attractions": {
+    "tag": "700 feet above sea level",
+    "title": "Amrapali Homestay - Dapoli",
+    "description": "130-year-old house and cottages in mango orchard - Eco village tourism experience",
+    "sideScenes": "Side Scenes around Amrapali",
+    "touristSpot": "Tourist Spot",
+    "backToAmrapali": "Back to Amrapali",
+    "getDirections": "Get Directions",
+    "badges": {
+      "wasteFree": "First waste-free tourism in Maharashtra",
+      "ecoVillage": "Eco Village Tourism",
+      "heritage": "130-year-old heritage house"
+    },
+    "list": [
+      { "name": "Bharat Ratna P.V. Kane Memorial" },
+      { "name": "Dr. Prashant Paranjpe Antique Museum" },
+      { "name": "Shree Keshavraj Temple, Asud" },
+      { "name": "Kadyawaril Shri Ganapati Temple, Anjarle" },
+      { "name": "Suvarnadurga Fort (Sea Fort)" },
+      { "name": "Murud Beach" },
+      { "name": "Ladghar Tamas Teerth" },
+      { "name": "Bhagwan Parshuram Statue, Burondi" },
+      { "name": "Unhavare Hot Water Springs" },
+      { "name": "Panhalakaji Caves" },
+      { "name": "Reserve Forest Devrai Jungle" },
+      { "name": "Chandika Devi Temple" },
+      { "name": "Sane Guruji's Residence" }
+    ]
+  },
+  "langSwitcher": {
+    "select": "Select Language",
+    "choose": "Choose your preferred language",
+    "close": "Close"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "return": "Return to Home"
+  },
+  "footer": {
+    "location": "Dapoli, Maharashtra",
+    "rights": "All rights reserved."
+  }
+}
