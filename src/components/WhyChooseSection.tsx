@@ -1,18 +1,11 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-
-const reasons = [
-  "दापोलीतील सर्वोत्तम कौटुंबिक होमस्टे",
-  "संपूर्ण शुद्ध शाकाहारी जेवण",
-  "मद्यपान व धूम्रपान मुक्त परिसर",
-  "निसर्गरम्य शांत वातावरण",
-  "खऱ्या गावाकडच्या जीवनाचा अनुभव",
-  "बीच आणि किल्ल्यांच्या जवळ",
-  "स्वच्छ आणि आरामदायी खोल्या",
-  "परवडणारे दर",
-];
+import { useTranslation } from "react-i18next";
 
 const WhyChooseSection = () => {
+  const { t } = useTranslation();
+  const reasons = t("why.reasons", { returnObjects: true }) as string[];
+
   return (
     <section className="section-padding bg-primary text-primary-foreground">
       <div className="container mx-auto px-3 md:px-6">
@@ -22,9 +15,9 @@ const WhyChooseSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-gold font-semibold mb-2 tracking-wider uppercase text-sm">आम्हीच का?</p>
+          <p className="text-gold font-semibold mb-2 tracking-wider uppercase text-sm">{t("why.tag")}</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold">
-            आम्रपाली होमस्टे का निवडावे?
+            {t("why.title")}
           </h2>
         </motion.div>
 

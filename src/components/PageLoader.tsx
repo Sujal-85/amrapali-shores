@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.png";
 
 const PageLoader = ({ children }: { children: React.ReactNode }) => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -62,16 +64,16 @@ const PageLoader = ({ children }: { children: React.ReactNode }) => {
             transition={{ delay: 0.6, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="mt-10 text-center"
           >
-            <h2 className="font-heading text-xl md:text-2xl font-semibold text-stone-800 marathi">
-              आम्रपाली होमस्टे
+            <h2 className="font-heading text-xl md:text-2xl font-semibold text-stone-800">
+              {t("nav.brand")}
             </h2>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.5 }}
-              className="text-stone-500 text-sm mt-2 marathi"
+              className="text-stone-500 text-sm mt-2"
             >
-              दापोली, {"\u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"}
+              {t("nav.dapoliMaharashtra")}
             </motion.p>
           </motion.div>
 

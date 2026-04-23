@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { MapPin, Navigation } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const LocationSection = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const routes = t("location.routes", { returnObjects: true }) as string[];
 
   return (
     <section className="section-padding bg-secondary/30">
@@ -14,9 +17,9 @@ const LocationSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">स्थान</p>
+          <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">{t("location.tag")}</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-            तुम्ही कसे पोहोचाल ?
+            {t("location.title")}
           </h2>
         </motion.div>
 
@@ -33,10 +36,9 @@ const LocationSection = () => {
               <div className="flex items-start gap-3 mb-6">
                 <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-foreground mb-2">पत्ता</h3>
-                  <p className="text-muted-foreground marathi">
-                    आम्रपाली होमस्टे, दापोली,<br />
-                    रत्नागिरी जिल्हा, {"\u092e\u0939\u093e\u0930\u093e\u0937\u094d\u091f\u094d\u0930"} ४१५७१२
+                  <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t("location.address")}</h3>
+                  <p className="text-muted-foreground">
+                    {t("location.fullAddress")}
                   </p>
                 </div>
               </div>
@@ -44,12 +46,11 @@ const LocationSection = () => {
               <div className="flex items-start gap-3 mb-6">
                 <Navigation className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-foreground mb-2">मार्ग</h3>
-                  <ul className="text-muted-foreground space-y-1 text-sm font-devanagari">
-                    <li>• मुंबई ~ दापोली: ≈ २२० कि.मी. (५ तास)</li>
-                    <li>• पुणे ~ दापोली: ≈ १९० कि.मी. (४.५ तास)</li>
-                    <li>• दापोली एसटी स्टँड: ≈ २ कि.मी.</li>
-                    <li>• जवळचे रेल्वे स्टेशन: खेड (29 कि.मी.)</li>
+                  <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t("location.route")}</h3>
+                  <ul className="text-muted-foreground space-y-1 text-sm">
+                    {routes.map((r, i) => (
+                      <li key={i}>• {r}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -61,7 +62,7 @@ const LocationSection = () => {
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
               >
                 <Navigation className="h-4 w-4" />
-                Google Maps वर पहा
+                {t("location.viewOnMaps")}
               </a>
             </div>
           </motion.div>
@@ -80,7 +81,7 @@ const LocationSection = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="आम्रपाली होमस्टे, दापोली"
+              title={t("nav.brand")}
             />
           </motion.div>
         </div>

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", phone: "", checkin: "", checkout: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,9 +22,9 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">संपर्क</p>
+          <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">{t("contact.tag")}</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-            बुकिंग चौकशी करा
+            {t("contact.title")}
           </h2>
         </motion.div>
 
@@ -34,7 +36,7 @@ const ContactSection = () => {
           >
             <div className="glass-card p-8 h-full flex flex-col justify-between">
               <div>
-                <h3 className="font-heading text-2xl font-bold text-foreground mb-6">थेट संपर्क</h3>
+                <h3 className="font-heading text-2xl font-bold text-foreground mb-6">{t("contact.directContact")}</h3>
                 <div className="space-y-4">
                   <a
                     href="tel:+918378034720"
@@ -44,7 +46,7 @@ const ContactSection = () => {
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">फोन / WhatsApp</p>
+                      <p className="text-sm text-muted-foreground">{t("contact.phoneWhatsapp")}</p>
                       <p className="font-bold text-foreground">+91 83780 34720</p>
                     </div>
                   </a>
@@ -56,7 +58,7 @@ const ContactSection = () => {
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">फोन</p>
+                      <p className="text-sm text-muted-foreground">{t("contact.phone")}</p>
                       <p className="font-bold text-foreground">+91 95611 42078</p>
                     </div>
                   </a>
@@ -70,15 +72,15 @@ const ContactSection = () => {
                       <MessageCircle className="h-5 w-5 text-[#25D366]" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">WhatsApp</p>
+                      <p className="text-sm text-muted-foreground">{t("contact.whatsapp")}</p>
                       <p className="font-bold text-foreground">+91 83780 34720</p>
                     </div>
                   </a>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground mt-6 font-devanagari">
-                बुकिंगसाठी कृपया किमान ३ दिवस आधी संपर्क करा. <br />
-                चेक-इन: दुपारी १२:०० | चेक-आउट: सकाळी ११:००
+              <p className="text-sm text-muted-foreground mt-6">
+                {t("contact.notice")} <br />
+                {t("contact.timings")}
               </p>
             </div>
           </motion.div>
@@ -90,30 +92,30 @@ const ContactSection = () => {
           >
             <form onSubmit={handleSubmit} className="glass-card p-8 space-y-4">
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">तुमचे नाव</label>
+                <label className="block text-sm font-medium text-foreground mb-1.5">{t("contact.form.name")}</label>
                 <input
                   type="text"
                   required
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-accent/50"
-                  placeholder="पूर्ण नाव"
+                  placeholder={t("contact.form.namePlaceholder")}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">फोन नंबर</label>
+                <label className="block text-sm font-medium text-foreground mb-1.5">{t("contact.form.phone")}</label>
                 <input
                   type="tel"
                   required
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-accent/50"
-                  placeholder="+91 XXXXX XXXXX"
+                  placeholder={t("contact.form.phonePlaceholder")}
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">चेक-इन</label>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">{t("contact.form.checkin")}</label>
                   <input
                     type="date"
                     required
@@ -123,7 +125,7 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">चेक-आउट</label>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">{t("contact.form.checkout")}</label>
                   <input
                     type="date"
                     required
@@ -134,21 +136,23 @@ const ContactSection = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">संदेश (ऐच्छिक)</label>
+                <label className="block text-sm font-medium text-foreground mb-1.5">{t("contact.form.message")}</label>
                 <textarea
                   rows={3}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-accent/50 resize-none"
-                  placeholder="काही विशेष सूचना..."
+                  placeholder={t("contact.form.messagePlaceholder")}
                 />
               </div>
               <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition-all hover:shadow-xl hover:scale-[1.02]"
               >
-                <Send className="h-4 w-4" />
-                WhatsApp वर पाठवा
+                <span className="flex items-center gap-2">
+                  <Send className="h-4 w-4" />
+                  {t("contact.form.send")}
+                </span>
               </button>
             </form>
           </motion.div>

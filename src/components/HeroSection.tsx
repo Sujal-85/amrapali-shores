@@ -2,46 +2,33 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import templeImg from "@/assets/nature-1.jpeg";
 import beachSunsetImg from "@/assets/attraction-beach-sunset.jpg";
 import waterSportsImg from "@/assets/attraction-water-sports.jpg";
 import beachPalmImg from "@/assets/attraction-beach-palm.jpg";
 
-const slides = [
-  {
-    image: templeImg,
-    title: "पारंपारिक मंदिर",
-    subtitle: "इतिहास आणि आध्यात्मिकता",
-  },
-  {
-    image: beachSunsetImg,
-    title: "सूर्यास्त वेळी बीच",
-    subtitle: "निसर्गाचे सौंदर्य",
-  },
-  {
-    image: waterSportsImg,
-    title: "पाण्यातील खेळ",
-    subtitle: "रोमांचक अनुभव",
-  },
-  {
-    image: beachPalmImg,
-    title: "नारळी किनारा",
-    subtitle: "शांतता आणि विश्रांती",
-  },
-];
+const images = [templeImg, beachSunsetImg, waterSportsImg, beachPalmImg];
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  const slidesData = t('hero.slides', { returnObjects: true }) as Array<{ title: string; subtitle: string }>;
+  const slides = slidesData.map((data, index) => ({
+    ...data,
+    image: images[index]
+  }));
+
   const nextSlide = useCallback(() => {
     setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % slides.length);
+    setCurrentIndex((prev) => (prev + 1) % images.length);
   }, []);
 
   const prevSlide = useCallback(() => {
     setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   }, []);
 
   const goToSlide = (index: number) => {
@@ -95,15 +82,10 @@ const HeroSection = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
           />
-          {/* Premium Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+          {/* Premium Overlay */}
+          <div className="absolute inset-0 bg-black/60" />
         </motion.div>
       </AnimatePresence>
-
-      {/* Shiny Border Effect */}
-      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
 
       {/* Content - Fixed Text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4">
@@ -116,9 +98,9 @@ const HeroSection = () => {
           <motion.h1
             className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg"
           >
-            निसर्गाच्या कुशीत
+            {t('hero.mainTitle')}
             <br />
-            <span className="text-amber-400">शांत जीवनाचा अनुभव</span>
+            <span className="text-amber-400">{t('hero.subTitle')}</span>
           </motion.h1>
 
           <motion.p
@@ -127,7 +109,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto"
           >
-            दापोलीतील शुद्ध शाकाहारी होमस्टे — खऱ्या गावाकडच्या अनुभवासह
+            {t('hero.description')}
           </motion.p>
         </motion.div>
 
@@ -140,16 +122,15 @@ const HeroSection = () => {
         >
           <Link
             to="/contact"
-            className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] overflow-hidden"
+            className="group relative inline-flex items-center justify-center rounded-full bg-amber-500 px-8 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:shadow-xl overflow-hidden"
           >
-            <span className="relative z-10">आत्ताच बुक करा</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="relative z-10">{t('hero.bookNow')}</span>
           </Link>
           <Link
             to="/rooms"
             className="inline-flex items-center justify-center rounded-full border-2 border-white/50 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/10 hover:scale-105 hover:border-white"
           >
-            खोल्या पहा
+            {t('hero.viewRooms')}
           </Link>
         </motion.div>
       </div>

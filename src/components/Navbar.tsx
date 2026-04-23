@@ -2,23 +2,26 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.png";
-
-const navLinks = [
-  { label: "मुख्यपृष्ठ", href: "/" },
-  { label: "आमच्याबद्दल", href: "/about" },
-  { label: "खोल्या", href: "/rooms" },
-  { label: "गॅलरी", href: "/gallery" },
-  { label: "सेवा", href: "/services" },
-  { label: "पर्यटन", href: "/attractions" },
-  { label: "संपर्क", href: "/contact" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+
+  const navLinks = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about"), href: "/about" },
+    { label: t("nav.rooms"), href: "/rooms" },
+    { label: t("nav.gallery"), href: "/gallery" },
+    { label: t("nav.services"), href: "/services" },
+    { label: t("nav.attractions"), href: "/attractions" },
+    { label: t("nav.contact"), href: "/contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -41,13 +44,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="आम्रपाली होमस्टे" className="h-12 w-12 rounded-full object-cover" />
+          <img src={logo} alt={t("nav.brand")} className="h-12 w-12 rounded-full object-cover" />
           <span className={`font-heading text-xl font-bold transition-colors ${textColor}`}>
-            आम्रपाली होमस्टे
+            {t("nav.brand")}
           </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -59,21 +62,28 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <a
-            href="tel:+918378034720"
-            className="flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
-          >
-            <Phone className="h-4 w-4" />
-            कॉल करा
-          </a>
+          
+          <div className="flex items-center gap-4 border-l border-border pl-6">
+            <LanguageSwitcher textColor={textColor} />
+            <a
+              href="tel:+918378034720"
+              className="flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            >
+              <Phone className="h-4 w-4" />
+              {t("nav.callUs")}
+            </a>
+          </div>
         </div>
 
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className={`md:hidden p-2 ${textColor}`}
-        >
-          {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex md:hidden items-center gap-4">
+          <LanguageSwitcher textColor={textColor} />
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={`p-2 ${textColor}`}
+          >
+            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -97,13 +107,16 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="tel:+918378034720"
-                className="flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground"
-              >
-                <Phone className="h-4 w-4" />
-                कॉल करा
-              </a>
+              
+              <div className="flex flex-col gap-3 pt-4 border-t border-border">
+                <a
+                  href="tel:+918378034720"
+                  className="flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground"
+                >
+                  <Phone className="h-4 w-4" />
+                  {t("nav.callUs")}
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

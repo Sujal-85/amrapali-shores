@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Users, Info } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import whatsappIcon from "@/assets/whatsapp-icon.svg";
 import roomBed3 from "@/assets/room-bed-3.jpeg";
 import roomBed2 from "@/assets/room-bed-2.jpeg";
@@ -9,59 +10,60 @@ import roomNonac from "@/assets/room-nonac.jpeg";
 import roomJointCottage from "@/assets/room-joint-cottage.jpeg";
 import roomCoupleCottage from "@/assets/room-couple-cottage.jpeg";
 
-const rooms = [
-  {
-    id: "family-cottage-fan",
-    image: roomBed3,
-    title: "फॅमिली कॉटेज",
-    price: "₹३,५००",
-    capacity: "५ जण",
-    features: ["पंखा", "अटॅच्ड बाथरूम", "कॉटेज"],
-  },
-  {
-    id: "family-cottage-ac",
-    image: roomBed2,
-    title: "फॅमिली कॉटेज",
-    price: "₹३,५००",
-    capacity: "५ जण",
-    features: ["एसी", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
-  },
-  {
-    id: "ac-room",
-    image: roomAc,
-    title: "एसी रूम",
-    price: "₹२,०००",
-    capacity: "१ - ३ जण",
-    features: ["एसी", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
-  },
-  {
-    id: "non-ac-room",
-    image: roomNonac,
-    title: "नॉन एसी रूम",
-    price: "₹१,५००",
-    capacity: "२ जण",
-    features: ["पंखा", "अटॅच्ड बाथरूम", "प्रायव्हेट"],
-  },
-  {
-    id: "joint-cottage",
-    image: roomJointCottage,
-    title: "जॉइंट कॉटेज",
-    price: "₹६,०००",
-    capacity: "८ जण",
-    features: ["पंखा", "अटॅच्ड बाथरूम", "मोठा कॉटेज"],
-  },
-  {
-    id: "couple-cottage",
-    image: roomCoupleCottage,
-    title: "कपल कॉटेज",
-    price: "₹२,५००",
-    capacity: "२ जण",
-    features: ["पंखा", "एसी","अटॅच्ड बाथरूम", "प्रायव्हेट"],
-  },
-];
-
 const RoomsSection = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const rooms = [
+    {
+      id: "family-cottage-fan",
+      image: roomBed3,
+      title: t("rooms.types.family-cottage-fan"),
+      price: "₹3,500",
+      capacity: `5 ${t("rooms.upTo")}`,
+      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.cottage")],
+    },
+    {
+      id: "family-cottage-ac",
+      image: roomBed2,
+      title: t("rooms.types.family-cottage-ac"),
+      price: "₹3,500",
+      capacity: `5 ${t("rooms.upTo")}`,
+      features: [t("rooms.amenities.ac"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private")],
+    },
+    {
+      id: "ac-room",
+      image: roomAc,
+      title: t("rooms.types.ac-room"),
+      price: "₹2,000",
+      capacity: `1 - 3 ${t("rooms.upTo")}`,
+      features: [t("rooms.amenities.ac"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private")],
+    },
+    {
+      id: "non-ac-room",
+      image: roomNonac,
+      title: t("rooms.types.non-ac-room"),
+      price: "₹1,500",
+      capacity: `2 ${t("rooms.upTo")}`,
+      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private")],
+    },
+    {
+      id: "joint-cottage",
+      image: roomJointCottage,
+      title: t("rooms.types.joint-cottage"),
+      price: "₹6,000",
+      capacity: `8 ${t("rooms.upTo")}`,
+      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.big-cottage")],
+    },
+    {
+      id: "couple-cottage",
+      image: roomCoupleCottage,
+      title: t("rooms.types.couple-cottage"),
+      price: "₹2,500",
+      capacity: `2 ${t("rooms.upTo")}`,
+      features: [t("rooms.amenities.fan"), t("rooms.amenities.ac"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private")],
+    },
+  ];
 
   return (
     <section id="rooms" className=" section-padding bg-secondary/20">
@@ -72,16 +74,16 @@ const RoomsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">आमच्या खोल्या</p>
+          <p className="text-accent font-semibold mb-2 tracking-wider uppercase text-sm">{t("rooms.tag")}</p>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-            आरामदायी व्यवस्था
+            {t("rooms.title")}
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
           {rooms.map((room, i) => (
             <motion.div
-              key={room.title}
+              key={room.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -97,14 +99,14 @@ const RoomsSection = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-accent text-accent-foreground px-2 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm font-bold">
-                  {room.price}/रात्र
+                  {room.price}{t("rooms.perNight")}
                 </div>
               </div>
               <div className="p-3 md:p-6">
                 <h3 className="font-heading text-sm md:text-xl font-bold text-foreground mb-2 md:mb-3">{room.title}</h3>
                 <div className="flex items-center gap-1 md:gap-2 text-muted-foreground text-xs md:text-sm mb-2 md:mb-4">
                   <Users className="h-3 w-3 md:h-4 md:w-4" />
-                  <span>{room.capacity} पर्यंत</span>
+                  <span>{room.capacity}</span>
                 </div>
                 <div className="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-5">
                   {room.features.map((f) => (
@@ -119,7 +121,7 @@ const RoomsSection = () => {
                     className="flex-1 flex items-center justify-center gap-1 rounded-lg bg-primary px-2 py-2 md:px-3 md:py-3 text-xs md:text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg"
                   >
                     <Info className="h-3 w-3 md:h-4 md:w-4" />
-                    <span className="hidden md:inline">माहिती</span>
+                    <span className="hidden md:inline">{t("rooms.info")}</span>
                   </Link>
                   <a
                     href={`https://wa.me/918378034720?text=नमस्कार`}
@@ -128,7 +130,7 @@ const RoomsSection = () => {
                     className="flex-1 flex items-center justify-center gap-1 rounded-lg bg-green-600 px-2 py-2 md:px-3 md:py-3 text-xs md:text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg"
                   >
                     <img src={whatsappIcon} alt="WhatsApp" className="h-3 w-3 md:h-4 md:w-4" />
-                    <span className="hidden md:inline">बुक करा</span>
+                    <span className="hidden md:inline">{t("rooms.book")}</span>
                   </a>
                 </div>
               </div>
