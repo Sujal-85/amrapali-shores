@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amrapalihomestay.com/sitemap.xml
+Sitemap: https://amrapalihomestay.in/sitemap.xml
