@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Instagram, Facebook } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.png";
@@ -64,6 +64,26 @@ const Navbar = () => {
           ))}
           
           <div className="flex items-center gap-4 border-l border-border pl-6">
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://instagram.com/amrapali_dapoli?igshid=MzRlODBiNWFlZA==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={`transition-colors hover:text-accent ${textColor}`}
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a 
+                href="https://www.facebook.com/AmrapaliDapoli" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={`transition-colors hover:text-[#1877F2] ${textColor}`}
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+            </div>
             <LanguageSwitcher textColor={textColor} />
             <a
               href="tel:+918378034720"
@@ -109,6 +129,26 @@ const Navbar = () => {
               ))}
               
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
+                <div className="flex justify-center gap-8 mb-2">
+                  <a 
+                    href="https://instagram.com/amrapali_dapoli?igshid=MzRlODBiNWFlZA==" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:text-accent transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-6 w-6" />
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/AmrapaliDapoli" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:text-[#1877F2] transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="h-6 w-6" />
+                  </a>
+                </div>
                 <a
                   href="tel:+918378034720"
                   className="flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground"
