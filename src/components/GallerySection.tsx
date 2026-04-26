@@ -35,6 +35,10 @@ import img5 from "@/assets/img5.jpeg";
 import img6 from "@/assets/img6.jpeg";
 import img7 from "@/assets/img7.jpeg";
 import img8 from "@/assets/img8.jpeg";
+import natureFlower1 from "@/assets/nature-flower-1.jpeg";
+import natureFlower2 from "@/assets/nature-flower-2.jpeg";
+import natureTree1 from "@/assets/nature-tree-1.jpeg";
+import natureTree2 from "@/assets/nature-tree-2.jpeg";
 
 const initialImages = [
   { src: g1, span: "md:col-span-2 md:row-span-2" },
@@ -73,6 +77,11 @@ const initialImages = [
   { src: img6 },
   { src: img7 },
   { src: img8 },
+  { src: natureFlower1, span: "md:col-span-2" },
+  { src: natureFlower2 },
+  { src: natureTree1 },
+  { src: natureTree2, span: "md:col-span-2" },
+  { src: natureTree1 },
 ];
 
 const GallerySection = () => {
@@ -128,7 +137,7 @@ const GallerySection = () => {
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
               

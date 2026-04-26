@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, Send } from "lucide-react";
+import { Phone, MessageCircle, Send, Instagram, Facebook } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
@@ -76,6 +76,26 @@ const ContactSection = () => {
                       <p className="font-bold text-foreground">+91 83780 34720</p>
                     </div>
                   </a>
+                  <div className="flex items-center gap-4 pt-2">
+                    <a
+                      href="https://instagram.com/amrapali_dapoli?igshid=MzRlODBiNWFlZA=="
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-3 p-4 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] text-white hover:opacity-90 transition-opacity"
+                    >
+                      <Instagram className="h-5 w-5" />
+                      <span className="font-semibold text-sm">Instagram</span>
+                    </a>
+                    <a
+                      href="https://www.facebook.com/AmrapaliDapoli"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-3 p-4 rounded-xl bg-[#1877F2] text-white hover:opacity-90 transition-opacity"
+                    >
+                      <Facebook className="h-5 w-5" />
+                      <span className="font-semibold text-sm">Facebook</span>
+                    </a>
+                  </div>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground mt-6">
