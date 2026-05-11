@@ -27,6 +27,7 @@ import new3 from "@/assets/gallery-new-3.jpeg";
 import new4 from "@/assets/gallery-new-4.jpeg";
 import new5 from "@/assets/gallery-new-5.jpeg";
 import new6 from "@/assets/gallery-new-6.jpg";
+import happyCustomer1 from "@/assets/happy-customer-1.jpeg";
 import img1 from "@/assets/img1.jpeg";
 import img2 from "@/assets/img2.jpeg";
 import img3 from "@/assets/img3.jpeg";
@@ -82,6 +83,7 @@ const initialImages = [
   { src: natureTree1 },
   { src: natureTree2, span: "md:col-span-2" },
   { src: natureTree1 },
+  { src: happyCustomer1, span: "md:col-span-2" },
 ];
 
 const GallerySection = () => {
