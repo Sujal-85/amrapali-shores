@@ -57,6 +57,7 @@
     "title": "Comfortable Accommodation",
     "perNight": "/night",
     "upTo": "up to",
+    "adults": "Adults",
     "info": "Info",
     "book": "Book",
     "backToAll": "Back to all rooms",
@@ -65,7 +66,7 @@
     "bookOnWhatsapp": "Book on WhatsApp",
     "types": {
       "family-cottage-fan": "Family Cottage (Fan)",
-      "family-cottage-ac": "Family Cottage (AC)",
+      "family-cottage-ac": "Family Cottage (Non AC)",
       "ac-room": "AC Room",
       "non-ac-room": "Non AC Room",
       "joint-cottage": "Joint Cottage",
@@ -88,7 +89,7 @@
     },
     "descriptions": {
       "family-cottage-fan": "This cottage is perfect for families. It has a fan, attached bathroom and a beautiful garden view.",
-      "family-cottage-ac": "This AC cottage is comfortable even in summer. Comes with a private entry and modern amenities.",
+      "family-cottage-ac": "This non-AC cottage is perfect for families. Comes with a fan, private entry and a beautiful garden view.",
       "ac-room": "Excellent AC room for 1 to 3 people. Comfortable living with all modern amenities.",
       "non-ac-room": "Best stay option in budget. Comfortable room for 2 people.",
       "joint-cottage": "Special cottage for large groups. Enough space for 8 people and all facilities.",
