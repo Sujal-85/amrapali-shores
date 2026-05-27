@@ -16,11 +16,11 @@ const RoomsSection = () => {
 
   const rooms = [
     {
-      id: "family-cottage-fan",
+      id: "family-cottage-ac",
       image: roomBed3,
-      title: t("rooms.types.family-cottage-fan"),
+      title: t("rooms.types.family-cottage-ac"),
       price: "₹3,500",
-      capacity: `5 ${t("rooms.upTo")}`,
+      capacity: `5 ${t("rooms.adults")}`,
       features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.cottage")],
     },
     {
@@ -28,15 +28,15 @@ const RoomsSection = () => {
       image: roomBed2,
       title: t("rooms.types.family-cottage-ac"),
       price: "₹3,500",
-      capacity: `5 ${t("rooms.upTo")}`,
-      features: [t("rooms.amenities.ac"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private")],
+      capacity: `5 ${t("rooms.adults")}`,
+      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.cottage")],
     },
     {
       id: "ac-room",
       image: roomAc,
       title: t("rooms.types.ac-room"),
       price: "₹2,000",
-      capacity: `1 - 3 ${t("rooms.upTo")}`,
+      capacity: `1 - 3 ${t("rooms.adults")}`,
       features: [t("rooms.amenities.ac"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private")],
     },
     {
@@ -44,7 +44,7 @@ const RoomsSection = () => {
       image: roomNonac,
       title: t("rooms.types.non-ac-room"),
       price: "₹1,500",
-      capacity: `2 ${t("rooms.upTo")}`,
+      capacity: `2 ${t("rooms.adults")}`,
       features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private")],
     },
     {
@@ -52,7 +52,7 @@ const RoomsSection = () => {
       image: roomJointCottage,
       title: t("rooms.types.joint-cottage"),
       price: "₹6,000",
-      capacity: `8 ${t("rooms.upTo")}`,
+      capacity: `8 ${t("rooms.adults")}`,
       features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.big-cottage")],
     },
     {
@@ -60,7 +60,7 @@ const RoomsSection = () => {
       image: roomCoupleCottage,
       title: t("rooms.types.couple-cottage"),
       price: "₹2,500",
-      capacity: `2 ${t("rooms.upTo")}`,
+      capacity: `2 ${t("rooms.adults")}`,
       features: [t("rooms.amenities.fan"), t("rooms.amenities.ac"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private")],
     },
   ];
