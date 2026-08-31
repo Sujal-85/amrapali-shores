@@ -1,86 +1,24 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Users, ArrowLeft, Check } from "lucide-react";
+import { Users, ArrowLeft, Check, Calendar, Sparkles, Utensils, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import whatsappIcon from "@/assets/whatsapp-icon.svg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import roomBed3 from "@/assets/room-bed-3.jpeg";
-import roomBed2 from "@/assets/room-bed-2.jpeg";
-import roomAc from "@/assets/room-ac.jpeg";
-import roomNonac from "@/assets/room-nonac.jpeg";
-import roomJointCottage from "@/assets/room-joint-cottage.jpeg";
-import roomCoupleCottage from "@/assets/room-couple-cottage.jpeg";
+import { getRoomById, SPECIAL_PACKAGE } from "@/data/roomsData";
 
 const RoomDetailsPage = () => {
   const { id } = useParams();
   const { t } = useTranslation();
 
-  const rooms = [
-    {
-      id: "family-cottage-ac",
-      image: roomBed3,
-      title: t("rooms.types.family-cottage-ac"),
-      price: "₹3,500",
-      capacity: `5 ${t("rooms.adults")}`,
-      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.cottage"), t("rooms.amenities.private-entry"), t("rooms.amenities.garden-view")],
-      description: t("rooms.descriptions.family-cottage-fan"),
-    },
-    {
-      id: "family-cottage-ac",
-      image: roomBed2,
-      title: t("rooms.types.family-cottage-ac"),
-      price: "₹3,500",
-      capacity: `5 ${t("rooms.adults")}`,
-      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.cottage"), t("rooms.amenities.garden-view"), t("rooms.amenities.free-wifi")],
-      description: t("rooms.descriptions.family-cottage-ac"),
-    },
-    {
-      id: "ac-room",
-      image: roomAc,
-      title: t("rooms.types.ac-room"),
-      price: "₹2,500",
-      capacity: `1 - 3 ${t("rooms.adults")}`,
-      features: [t("rooms.amenities.ac"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.tv"), t("rooms.amenities.free-wifi"), t("rooms.amenities.garden-view")],
-      description: t("rooms.descriptions.ac-room"),
-    },
-    {
-      id: "non-ac-room",
-      image: roomNonac,
-      title: t("rooms.types.non-ac-room"),
-      price: "₹1,500",
-      capacity: `2 ${t("rooms.adults")}`,
-      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.tv"), t("rooms.amenities.garden-view"), t("rooms.amenities.economic")],
-      description: t("rooms.descriptions.non-ac-room"),
-    },
-    {
-      id: "joint-cottage",
-      image: roomJointCottage,
-      title: t("rooms.types.joint-cottage"),
-      price: "₹6,000",
-      capacity: `8 ${t("rooms.adults")}`,
-      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.big-cottage"), t("rooms.amenities.great-for-groups"), t("rooms.amenities.garden-view"), t("rooms.amenities.free-wifi")],
-      description: t("rooms.descriptions.joint-cottage"),
-    },
-    {
-      id: "couple-cottage",
-      image: roomCoupleCottage,
-      title: t("rooms.types.couple-cottage"),
-      price: "₹2,500",
-      capacity: `2 ${t("rooms.adults")}`,
-      features: [t("rooms.amenities.fan"), t("rooms.amenities.attached-bathroom"), t("rooms.amenities.private"), t("rooms.amenities.garden-view"), t("rooms.amenities.cooler")],
-      description: t("rooms.descriptions.couple-cottage"),
-    },
-  ];
-
-  const room = rooms.find((r) => r.id === id);
+  const room = getRoomById(id);
 
   if (!room) {
     return (
       <main>
         <Navbar />
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center pt-20">
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">{t("rooms.notFound")}</h1>
             <Link to="/rooms" className="text-primary hover:underline">
@@ -96,8 +34,8 @@ const RoomDetailsPage = () => {
   return (
     <main>
       <Navbar />
-      <section className="section-padding bg-secondary/30 pt-24">
-        <div className="container mx-auto px-3 md:px-6">
+      <section className="section-padding bg-secondary/30 pt-28 pb-16">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,60 +43,108 @@ const RoomDetailsPage = () => {
           >
             <Link
               to="/rooms"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 text-sm font-medium transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               {t("rooms.backToAll")}
             </Link>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="overflow-hidden rounded-2xl">
-                <img
-                  src={room.image}
-                  alt={room.title}
-                  className="w-full h-64 md:h-96 object-cover"
-                />
-              </div>
-
+            <div className="grid md:grid-cols-2 gap-10 items-start">
+              {/* Room Image Container */}
               <div className="space-y-6">
-                <div>
-                  <h1 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2">
-                    {room.title}
-                  </h1>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Users className="h-5 w-5" />
-                    <span>{room.capacity}</span>
+                <div className="overflow-hidden rounded-3xl shadow-xl relative border border-border">
+                  <img
+                    src={room.image}
+                    alt={t(room.titleKey)}
+                    className="w-full h-72 md:h-[420px] object-cover"
+                  />
+                  <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-md text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                    {room.isAC ? "AC Room" : "Non-AC Room"}
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl font-bold text-accent">{room.price}</span>
-                  <span className="text-muted-foreground">{t("rooms.perNight")}</span>
+                {/* All-inclusive package card banner inside details page */}
+                <div className="bg-gradient-to-br from-emerald-950 to-teal-900 text-white p-6 rounded-2xl border border-emerald-500/30 shadow-lg">
+                  <div className="flex items-center gap-2 text-amber-300 font-bold text-xs uppercase tracking-wider mb-2">
+                    <Sparkles className="h-4 w-4" />
+                    <span>{t("rooms.packageTitle")}</span>
+                  </div>
+                  <p className="text-lg font-bold text-amber-100 mb-3">
+                    {SPECIAL_PACKAGE.pricePerPerson} {t("rooms.perPersonPerDay")}
+                  </p>
+                  <p className="text-xs text-emerald-200 mb-3 font-medium flex items-center gap-1.5">
+                    <Utensils className="h-3.5 w-3.5 text-amber-400" />
+                    <span>{t("rooms.packageIncludesTitle")}</span>
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 text-xs text-emerald-100 mb-4">
+                    {SPECIAL_PACKAGE.inclusionsKeys.map((key) => (
+                      <div key={key} className="flex items-center gap-1.5">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+                        <span>{t(key)}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <a
+                    href={`https://wa.me/918378034720?text=${encodeURIComponent("नमस्कार! मी ऑल-इनक्लुसिव्ह पॅकेज (₹२०००/- प्रती व्यक्ती प्रती दिन) बद्दल चौकशी करू इच्छितो/इच्छिते.")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-2.5 px-4 rounded-xl text-xs transition-all shadow"
+                  >
+                    <img src={whatsappIcon} alt="WhatsApp" className="h-4 w-4" />
+                    <span>{t("rooms.bookOnWhatsapp")}</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Room Details & Pricing Info */}
+              <div className="space-y-6">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                    <Calendar className="h-3.5 w-3.5 text-accent" />
+                    <span>{t("rooms.effectiveFrom")}</span>
+                  </div>
+                  
+                  <h1 className="font-heading text-3xl md:text-4xl font-extrabold text-foreground mb-3">
+                    {t(room.titleKey)}
+                  </h1>
+
+                  <div className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+                    <Users className="h-5 w-5 text-accent" />
+                    <span>{t(room.capacityKey)}</span>
+                  </div>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed">{room.description}</p>
+                <div className="p-4 rounded-2xl bg-secondary/50 border border-border flex items-baseline gap-3">
+                  <span className="text-4xl font-extrabold text-accent">{room.price}</span>
+                  <span className="text-muted-foreground font-medium">{t("rooms.perNight")}</span>
+                </div>
 
                 <div>
-                  <h3 className="font-semibold mb-3">{t("rooms.amenitiesLabel")}</h3>
+                  <h3 className="font-semibold text-foreground mb-2 text-sm uppercase tracking-wider">{t("rooms.info")}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-base">{t(room.descriptionKey)}</p>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wider">{t("rooms.amenitiesLabel")}</h3>
                   <div className="flex flex-wrap gap-2">
-                    {room.features.map((feature) => (
+                    {room.featuresKeys.map((fKey) => (
                       <span
-                        key={feature}
-                        className="flex items-center gap-1 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                        key={fKey}
+                        className="flex items-center gap-1.5 bg-primary/10 text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold"
                       >
-                        <Check className="h-3 w-3" />
-                        {feature}
+                        <Check className="h-3.5 w-3.5" />
+                        {t(fKey)}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <div className="flex gap-4 pt-4">
+                <div className="pt-4">
                   <a
-                    href={`https://wa.me/918378034720?text=नमस्कार`}
+                    href={`https://wa.me/918378034720?text=${encodeURIComponent(`नमस्कार! मी ${t(room.titleKey)} (${room.price}) च्या बुकिंगबद्दल चौकशी करू इच्छितो/इच्छिते.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg"
+                    className="w-full flex items-center justify-center gap-2.5 rounded-2xl bg-green-600 hover:bg-green-700 px-6 py-4 font-bold text-white text-base transition-all shadow-xl hover:shadow-green-600/30"
                   >
                     <img src={whatsappIcon} alt="WhatsApp" className="h-5 w-5" />
                     {t("rooms.bookOnWhatsapp")}
